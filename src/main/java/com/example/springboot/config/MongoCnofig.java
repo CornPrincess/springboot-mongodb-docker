@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @Configuration
 @EnableMongoRepositories(basePackageClasses = UserRepository.class)
-@PropertySource("classpath:test.properties")
 public class MongoCnofig {
 
 }
