@@ -1,10 +1,3 @@
-#FROM openjdk:8-jre
-
-#COPY target/springboot-mongodb-docker-0.0.1-SNAPSHOT.jar app.jar
-
-#ENTRYPOINT ["java", "-jar", "/app.jar"]
-
-
 FROM maven
 
 ADD pom.xml /tmp/build/
@@ -20,4 +13,4 @@ RUN cd /tmp/build && mvn -q -DskipTests=true package \
 
 VOLUME /tmp
 EXPOSE 8080
-ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://springboot-mongo:27017/springmongo-demo", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://springboot-mongo:27017/restful", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]

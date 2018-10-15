@@ -3,23 +3,29 @@ package com.example.springboot.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
 
-@Document(collection = "user")
+
+@Document(collection = "users")
 public class User {
     @Id
     private String id;
-    private String username;
-    private String password;
-    private String email;
+    private String about;
+    private Integer created;
+    private Integer delay;
+    private Integer karma;
+    private List<Integer> submitted;
 
     public User() {
     }
 
-    public User(String id, String username, String password, String email) {
+    public User(String id, String about, Integer created, Integer delay, Integer karma, List<Integer> submitted) {
         this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
+        this.about = about;
+        this.created = created;
+        this.delay = delay;
+        this.karma = karma;
+        this.submitted = submitted;
     }
 
     public String getId() {
@@ -30,27 +36,43 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getAbout() {
+        return about;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setAbout(String about) {
+        this.about = about;
     }
 
-    public String getPassword() {
-        return password;
+    public Integer getCreated() {
+        return created;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCreated(Integer created) {
+        this.created = created;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getDelay() {
+        return delay;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDelay(Integer delay) {
+        this.delay = delay;
+    }
+
+    public Integer getKarma() {
+        return karma;
+    }
+
+    public void setKarma(Integer karma) {
+        this.karma = karma;
+    }
+
+    public List<Integer> getSubmitted() {
+        return submitted;
+    }
+
+    public void setSubmitted(List<Integer> submitted) {
+        this.submitted = submitted;
     }
 }
