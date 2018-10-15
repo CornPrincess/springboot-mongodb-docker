@@ -46,6 +46,7 @@ to check the contianers related with the project
 
 # How to work with the application
 The application provides three source REST API:
+
 users:
 ```bash
 GET: http://localhost:8080/rest/users/all
